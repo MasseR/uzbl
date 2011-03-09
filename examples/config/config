@@ -306,9 +306,6 @@ set ebind     = @mode_bind global,-insert
 # Or use a script to insert a bookmark.
 @cbind  B  = spawn @scripts_dir/insert_bookmark.sh
 
-@cbind qpu = spawn @scripts_dir/queue.hs push
-@cbind qpo = spawn @scripts_dir/queue.hs pop
-
 # Bookmark/history loading
 @cbind  U  = spawn @scripts_dir/load_url_from_history.sh
 @cbind  u  = spawn @scripts_dir/load_url_from_bookmarks.sh
