@@ -14,6 +14,6 @@ main = do
   weighted <- calculatedHistory
   historyfile <- getUserDataFile "uzbl" "history"
   history <- (map (head . drop 2 . B8.words) . B8.lines) `fmap` B8.readFile historyfile
-  let updatedmap = foldr (\u m -> M.insertWith' (flip const) u 0.5 m) weighted history
+  let updatedmap = foldr (\u m -> M.insertWith' (flip const) u 0.3 m) weighted history
       urls = map fst $ sortBy (\(_,a) (_,b) -> b `compare` a) $ M.assocs updatedmap
   B8.putStr $ B8.unlines urls
